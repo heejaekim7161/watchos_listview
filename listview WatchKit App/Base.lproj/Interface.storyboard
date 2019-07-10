@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller fullScreen="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="listview_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="center" id="CGS-Xm-FPs">
+                            <items>
+                                <tableRow identifier="CoinRow" id="iBQ-os-e7I" customClass="CoinRow" customModule="listview_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="0t6-Se-Qow">
+                                        <items>
+                                            <group height="35" alignment="left" id="v8y-fi-XRe">
+                                                <items>
+                                                    <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="down" id="daO-Wc-g3x"/>
+                                                    <label width="78" height="45" alignment="left" text="Label" id="P2Q-VS-1fx"/>
+                                                </items>
+                                            </group>
+                                            <group height="35" alignment="left" verticalAlignment="bottom" id="6PK-zn-qzz">
+                                                <items>
+                                                    <label width="91" height="42" alignment="left" text="15249000" textAlignment="left" id="vtZ-OL-Qe5"/>
+                                                    <label width="41" height="37" alignment="left" text="2.07" textAlignment="right" minimumScaleFactor="0.5" id="pI7-WQ-0nd"/>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="changeRate" destination="pI7-WQ-0nd" id="qoW-wn-mAh"/>
+                                        <outlet property="name" destination="P2Q-VS-1fx" id="oVn-1t-iGm"/>
+                                        <outlet property="price" destination="vtZ-OL-Qe5" id="Yb6-zZ-Uuf"/>
+                                        <outlet property="status" destination="daO-Wc-g3x" id="OLR-iy-c1b"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="CGS-Xm-FPs" id="tSX-7n-XGS"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="listview_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="listview_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+    </scenes>
+</document>
